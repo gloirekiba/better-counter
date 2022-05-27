@@ -23,6 +23,10 @@ button {
   cursor: pointer;
 }
 
+button:disabled {
+  pointer-events: none;
+}
+
 .btn {
   font-size: 5rem;
   font-weight: 400;
@@ -115,6 +119,12 @@ button {
   text-transform: uppercase;
 }
 
+.counter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
 /* Counter */
 
 .counter {
@@ -141,7 +151,7 @@ button {
   font-size: 3em;
 }
 
-.counter-last-count {
+.counter-last-update {
   font-size: 1.6rem;
 }
 
