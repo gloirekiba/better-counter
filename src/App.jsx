@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import CounterCreate from "./components/CounterCreate";
+import CounterCreate from "./components/CreateCounter";
 import AddCounter from "./components/AddCounter";
-import CounterList from "./components/CounterList";
+import CounterList from "./components/Counter";
 
 const App = () => {
   const [counters, setCounters] = useState([]);
