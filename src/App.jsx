@@ -1,15 +1,33 @@
+import { useState } from "react";
+
+import CounterCreate from "./components/CounterCreate";
+import AddCounter from "./components/AddCounter";
+import CounterList from "./components/CounterList";
+
 const App = () => {
+  const [counters, setCounters] = useState([]);
+
+  function addCounter(name, color) {
+    setCounters([
+      ...counters,
+      { id: counters.length + 1, name, count: 0, color: color, lastUpdate: "never" },
+    ]);
+  }
+
+  function setCount(id, value) {
+    const newCounters = [...counters];
+    const counter = newCounters.find((counter) => counter.id === id);
+    counter.count += value;
+    if (counter.count === 0) counter.lastUpdate = "never";
+    // else set lastUpdate to date now
+    setCounters(newCounters);
+  }
+
   return (
-    <div className="counter-list">
-      <div className="counter">
-        <button className="decrease">-</button>
-        <div className="content">
-          <span className="name">eat banana</span>
-          <span className="count">0</span>
-          <span className="last-count">never</span>
-        </div>
-        <button className="increase">+</button>
-      </div>
+    <div className="container">
+      <CounterCreate addCounter={addCounter} />
+      <CounterList counters={counters} setCount={setCount} />
+      <AddCounter />
     </div>
   );
 };
