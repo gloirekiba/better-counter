@@ -4,7 +4,7 @@ const CounterCreate = ({ addCounter }) => {
   const [name, setName] = useState("");
   const [color, setColor] = useState("white");
 
-  function handleSetname({ target }) {
+  function handleSetName({ target }) {
     setName(target.value);
   }
 
@@ -17,7 +17,7 @@ const CounterCreate = ({ addCounter }) => {
     <div className="counter-create">
       <h3 className="title">Add Counter</h3>
       <input
-        onChange={handleSetname}
+        onChange={handleSetName}
         value={name}
         type="text"
         className="counter-create-name"
