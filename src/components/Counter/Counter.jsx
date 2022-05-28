@@ -61,6 +61,7 @@ const Datas = styled.div`
   justify-content: center;
   padding: 1em;
   text-align: center;
+  cursor: cell;
 `;
 
 const Name = styled.span`
