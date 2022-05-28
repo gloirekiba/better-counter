@@ -25,7 +25,7 @@ const Counter = ({ counter, setCount }) => {
             &#128336;
           </Span>{" "}
           {isValid(counter.lastUpdate)
-            ? formatDistance(counter.lastUpdate, new Date())
+            ? formatDistance(counter.lastUpdate, new Date(), { addSuffix: true })
             : counter.lastUpdate}
         </LastUpdate>
       </Datas>
