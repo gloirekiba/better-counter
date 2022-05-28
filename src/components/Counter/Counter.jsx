@@ -31,6 +31,14 @@ const Container = styled.div`
   justify-content: space-between;
   background-color: #fff;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.144);
+  transform: translateX(-50%);
+  animation: anim 0.4s 0s forwards;
+
+  @keyframes anim {
+    to {
+      transform: translateX(0);
+    }
+  }
 `;
 
 const Button = styled.button`
