@@ -9,7 +9,7 @@ const COUNTER_DECREASE = COUNTER_INCREASE * -1;
 
 const Counter = ({ counter, updateCount, editCounter, deleteCounter }) => {
   const canDecrease = counter.count === 0;
-  const [showCounterEdit, setShowCounterEdit] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
   function onUpdateCount(value) {
     updateCount(counter.id, value);
@@ -17,20 +17,20 @@ const Counter = ({ counter, updateCount, editCounter, deleteCounter }) => {
 
   return (
     <>
-      {showCounterEdit && (
+      {showForm && (
         <ManageCounter
           context="edit"
           counter={counter}
           editCounter={editCounter}
           deleteCounter={deleteCounter}
-          setShowCounterEdit={setShowCounterEdit}
+          setShowForm={setShowForm}
         />
       )}
       <Container style={{ backgroundColor: counter.color }}>
         <Button onClick={() => onUpdateCount(COUNTER_DECREASE)} disabled={canDecrease}>
           &#8722;
         </Button>
-        <Datas onClick={() => setShowCounterEdit(true)}>
+        <Datas onClick={() => setShowForm(true)}>
           <Name>{counter.name}</Name>
           <Count>{counter.count}</Count>
           <LastUpdate>
