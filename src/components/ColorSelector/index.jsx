@@ -42,7 +42,6 @@ const Button = styled.button`
   height: 40px;
   border-radius: 50%;
   flex-shrink: 0;
-  cursor: pointer;
   box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.101);
 `;
 
