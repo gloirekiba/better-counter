@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
 
 import ManageCounter from "./components/ManageCounter";
 import CounterList from "./components/CounterList";
+
+const LOCAL_STORAGE_KEY = "better-counter-clone";
 
 const App = () => {
   const [counters, setCounters] = useState([]);
@@ -34,6 +36,15 @@ const App = () => {
     else counter.lastUpdate = new Date().toISOString();
     setCounters(newCounters);
   }
+
+  useEffect(() => {
+    const storedCounters = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    if (storedCounters) setCounters(storedCounters);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(counters));
+  }, [counters]);
 
   return (
     <>
