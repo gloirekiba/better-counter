@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
 
 import CreateCounter from "./components/CreateCounter";
@@ -9,10 +10,7 @@ const App = () => {
   const [display, setDisplay] = useState(false);
 
   function addCounter(name, color) {
-    setCounters([
-      ...counters,
-      { id: counters.length + 1, name, count: 0, color: color, lastUpdate: "never" },
-    ]);
+    setCounters([...counters, { id: uuidv4(), name, count: 0, color: color, lastUpdate: "never" }]);
   }
 
   function setCount(id, value) {
@@ -20,7 +18,7 @@ const App = () => {
     const counter = newCounters.find((counter) => counter.id === id);
     counter.count += value;
     if (counter.count === 0) counter.lastUpdate = "never";
-    // else set lastUpdate to date now
+    else counter.lastUpdate = new Date();
     setCounters(newCounters);
   }
 
@@ -29,7 +27,7 @@ const App = () => {
       {display && <CreateCounter setDisplay={setDisplay} addCounter={addCounter} />}
       {counters.length === 0 ? (
         <NoCounterFound>
-          No counter have been found, please create some by cliking to the <Strong>(&#43;)</Strong>{" "}
+          No counter have been found, please create some by cliking on the <Strong>(&#43;)</Strong>{" "}
           button bellow
         </NoCounterFound>
       ) : (
