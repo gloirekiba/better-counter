@@ -39,7 +39,7 @@ const CreateCounter = ({ addCounter, setDisplay }) => {
             placeholder="Counter name"
             autoFocus
           />
-          <ColorsList setColor={setColor} />
+          <ColorsList setColor={setColor} defaultColor={color} />
           <ButtonGroup>
             <Button type="button" onClick={() => handleDisplay(false)}>
               Close
