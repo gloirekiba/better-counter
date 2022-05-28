@@ -9,19 +9,18 @@ const ManageCounter = ({
   counter,
   editCounter,
   deleteCounter,
-  setShowCounterCreate,
-  setShowCounterEdit,
+  setShowForm,
 }) => {
   return (
     <>
       {context === "create" ? (
-        <CreateCounter addCounter={addCounter} setShowCounterCreate={setShowCounterCreate} />
+        <CreateCounter addCounter={addCounter} setShowForm={setShowForm} />
       ) : (
         <EditCounter
           counter={counter}
           editCounter={editCounter}
           deleteCounter={deleteCounter}
-          setShowCounterEdit={setShowCounterEdit}
+          setShowForm={setShowForm}
         />
       )}
     </>
