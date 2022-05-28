@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-import ColorsList from "../ColorSelector";
+import ColorSelector from "../ColorSelector";
 
 const CreateCounter = ({ addCounter, setShowForm }) => {
   const [name, setName] = useState("");
   const [color, setColor] = useState("white");
 
-  function handleSetName({ target }) {
+  function onChange({ target }) {
     setName(target.value);
   }
 
@@ -33,13 +33,13 @@ const CreateCounter = ({ addCounter, setShowForm }) => {
         <Title>Add Counter</Title>
         <Form onSubmit={onCreateCounter}>
           <Input
-            onChange={handleSetName}
+            onChange={onChange}
             value={name}
             type="text"
             placeholder="Counter name"
             autoFocus
           />
-          <ColorsList setColor={setColor} defaultColor={color} />
+          <ColorSelector setColor={setColor} defaultColor={color} />
           <ButtonGroup>
             <Button type="button" onClick={() => onClose(false)}>
               Close
