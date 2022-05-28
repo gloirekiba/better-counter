@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
 
-import ManageCounter from "./components/ManageCounter";
+import CounterManager from "./components/CounterManager";
 import CounterList from "./components/CounterList";
 
 const LOCAL_STORAGE_KEY = "better-counter-clone";
@@ -49,7 +49,7 @@ const App = () => {
   return (
     <>
       {showForm && (
-        <ManageCounter context="create" addCounter={addCounter} setShowForm={setShowForm} />
+        <CounterManager context="create" addCounter={addCounter} setShowForm={setShowForm} />
       )}
       <Container>
         {counters.length === 0 ? (
