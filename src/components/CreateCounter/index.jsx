@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import ColorsList from "../ColorSelector";
 
-const CreateCounter = ({ addCounter }) => {
+const CreateCounter = ({ addCounter, setDisplay }) => {
   const [name, setName] = useState("");
   const [color, setColor] = useState("white");
 
@@ -11,21 +11,40 @@ const CreateCounter = ({ addCounter }) => {
     setName(target.value);
   }
 
-  function handleAddCounter() {
+  function handleAddCounter(e) {
+    e.preventDefault();
     if (name.trim() === "") return;
     addCounter(name, color);
+    setName("");
   }
+
+  function handleDisplay(status) {
+    document.body.style.overflow = "auto";
+    setDisplay(status);
+  }
+
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+  });
 
   return (
     <Overlay>
       <Container>
         <Title>Add Counter</Title>
-        <Input onChange={handleSetName} value={name} type="text" placeholder="Counter name" />
-        <ColorsList />
-        <ButtonsContainer>
-          <Button>Cancel</Button>
-          <Button onClick={handleAddCounter}>Save</Button>
-        </ButtonsContainer>
+        <Form onSubmit={handleAddCounter}>
+          <Input
+            onChange={handleSetName}
+            value={name}
+            type="text"
+            placeholder="Counter name"
+            autoFocus
+          />
+          <ColorsList setColor={setColor} />
+          <ButtonGroup>
+            <Button onClick={() => handleDisplay(false)}>Close</Button>
+            <Button type="submit">Create</Button>
+          </ButtonGroup>
+        </Form>
       </Container>
     </Overlay>
   );
@@ -38,7 +57,16 @@ const Overlay = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
+  animation: anim 0.4s 0s forwards;
+  @keyframes anim {
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 `;
 
 const Container = styled.div`
@@ -48,12 +76,8 @@ const Container = styled.div`
   transform: translate(-50%, -20%);
   width: 95%;
   max-width: 600px;
-  min-height: 300px;
-  display: flex;
-  flex-direction: column;
   padding: 2em;
   border-radius: 5px;
-  background-color: rgb(181, 177, 177);
   background-color: #fff;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.144);
 `;
@@ -63,6 +87,8 @@ const Title = styled.h3`
   margin-bottom: 1em;
   text-transform: capitalize;
 `;
+
+const Form = styled.form``;
 
 const Input = styled.input`
   width: 100%;
@@ -74,11 +100,11 @@ const Input = styled.input`
   background-color: transparent;
 `;
 
-const ButtonsContainer = styled.div`
+const ButtonGroup = styled.div`
   display: flex;
   justify-content: flex-end;
   gap: 1em;
-  margin-top: auto;
+  margin-top: 50px;
 `;
 
 const Button = styled.button`
