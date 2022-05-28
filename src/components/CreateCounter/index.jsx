@@ -31,6 +31,7 @@ const CreateCounter = ({ addCounter }) => {
 
 const Container = styled.div`
   position: fixed;
+  z-index: 2;
   top: 20%;
   left: 50%;
   transform: translate(-50%, -20%);
