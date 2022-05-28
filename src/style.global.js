@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   button:disabled {
-  pointer-events: none;
+    cursor: not-allowed ;
   }
 `;
 
