@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import ColorsList from "../ColorSelector";
 
-const CreateCounter = ({ addCounter, setShowCounterCreate }) => {
+const CreateCounter = ({ addCounter, setShowForm }) => {
   const [name, setName] = useState("");
   const [color, setColor] = useState("white");
 
@@ -18,9 +18,9 @@ const CreateCounter = ({ addCounter, setShowCounterCreate }) => {
     setName("");
   }
 
-  function onClose(status) {
+  function onClose() {
     document.body.style.overflow = "auto";
-    setShowCounterCreate(status);
+    setShowForm(false);
   }
 
   useEffect(() => {
