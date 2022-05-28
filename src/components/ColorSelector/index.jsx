@@ -6,7 +6,7 @@ import COLORS from "../../data/ColorList";
 const ColorsList = ({ setColor, defaultColor }) => {
   const [selected, setSelected] = useState(defaultColor);
 
-  function onSetColor({ value }) {
+  function onSelect({ value }) {
     setColor(value);
     setSelected(value);
   }
@@ -15,7 +15,7 @@ const ColorsList = ({ setColor, defaultColor }) => {
     <Container>
       {COLORS.map((color, index) => (
         <Button
-          onClick={({ target }) => onSetColor(target)}
+          onClick={({ target }) => onSelect(target)}
           key={index}
           type="button"
           style={{ backgroundColor: color }}
