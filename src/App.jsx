@@ -12,7 +12,7 @@ const App = () => {
   const [showForm, setShowForm] = useState(false);
 
   function addCounter(name, color) {
-    setCounters([...counters, { id: uuidv4(), name, count: 0, color: color, lastUpdate: null }]);
+    setCounters([...counters, { id: uuidv4(), name, count: 0, color, lastUpdate: null }]);
   }
 
   function deleteCounter(id) {
@@ -54,8 +54,7 @@ const App = () => {
       <Container>
         {counters.length === 0 ? (
           <NoCounterFound>
-            No counter have been found, please create some by cliking on the{" "}
-            <Strong>(&#43;)</Strong> button bellow
+            No counter found, click the <Strong>(&#43;)</Strong> button bellow to add
           </NoCounterFound>
         ) : (
           <CounterList
