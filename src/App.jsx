@@ -9,7 +9,7 @@ const LOCAL_STORAGE_KEY = "better-counter-clone";
 
 const App = () => {
   const [counters, setCounters] = useState([]);
-  const [showCounterCreate, setShowCounterCreate] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
   function addCounter(name, color) {
     setCounters([...counters, { id: uuidv4(), name, count: 0, color: color, lastUpdate: null }]);
@@ -48,12 +48,8 @@ const App = () => {
 
   return (
     <>
-      {showCounterCreate && (
-        <ManageCounter
-          context="create"
-          addCounter={addCounter}
-          setShowCounterCreate={setShowCounterCreate}
-        />
+      {showForm && (
+        <ManageCounter context="create" addCounter={addCounter} setShowForm={setShowForm} />
       )}
       <Container>
         {counters.length === 0 ? (
@@ -69,9 +65,7 @@ const App = () => {
             deleteCounter={deleteCounter}
           />
         )}
-        {!showCounterCreate && (
-          <ShowManager onClick={() => setShowCounterCreate(true)}>&#43;</ShowManager>
-        )}
+        {!showForm && <ShowManager onClick={() => setShowForm(true)}>&#43;</ShowManager>}
       </Container>
     </>
   );
