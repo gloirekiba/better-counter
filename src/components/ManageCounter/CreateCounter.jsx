@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import ColorsList from "../ColorSelector";
 
-const CreateCounter = ({ addCounter, setDisplay }) => {
+const CreateCounter = ({ addCounter, setShowCounterCreate }) => {
   const [name, setName] = useState("");
   const [color, setColor] = useState("white");
 
@@ -11,16 +11,16 @@ const CreateCounter = ({ addCounter, setDisplay }) => {
     setName(target.value);
   }
 
-  function handleAddCounter(e) {
+  function onCreateCounter(e) {
     e.preventDefault();
     if (name.trim() === "") return;
     addCounter(name, color);
     setName("");
   }
 
-  function handleDisplay(status) {
+  function onClose(status) {
     document.body.style.overflow = "auto";
-    setDisplay(status);
+    setShowCounterCreate(status);
   }
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const CreateCounter = ({ addCounter, setDisplay }) => {
     <Overlay>
       <Container>
         <Title>Add Counter</Title>
-        <Form onSubmit={handleAddCounter}>
+        <Form onSubmit={onCreateCounter}>
           <Input
             onChange={handleSetName}
             value={name}
@@ -41,7 +41,7 @@ const CreateCounter = ({ addCounter, setDisplay }) => {
           />
           <ColorsList setColor={setColor} defaultColor={color} />
           <ButtonGroup>
-            <Button type="button" onClick={() => handleDisplay(false)}>
+            <Button type="button" onClick={() => onClose(false)}>
               Close
             </Button>
             <Button type="submit">Save</Button>
