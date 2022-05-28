@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import CreateCounter from "./components/CreateCounter";
 import CounterList from "./components/Counter";
+import { flushSync } from "react-dom/cjs/react-dom.production.min";
 
 const App = () => {
   const [counters, setCounters] = useState([]);
@@ -12,6 +13,8 @@ const App = () => {
   function addCounter(name, color) {
     setCounters([...counters, { id: uuidv4(), name, count: 0, color: color, lastUpdate: null }]);
   }
+
+  function editCounter(id, data) {}
 
   function setCount(id, value) {
     const newCounters = [...counters];
