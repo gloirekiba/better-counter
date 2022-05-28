@@ -3,21 +3,28 @@ import styled from "styled-components";
 
 import COLORS from "../../data/ColorList";
 
-const ColorsList = () => {
+const ColorsList = ({ setColor }) => {
   return (
     <Container>
       {COLORS.map((color, index) => (
-        <Button key={index} style={{ backgroundColor: color }} title={color} value={color} />
+        <Button
+          onClick={({ target }) => setColor(target.value)}
+          key={index}
+          type="button"
+          style={{ backgroundColor: color }}
+          title={color}
+          value={color}
+        />
       ))}
     </Container>
   );
 };
 
 const Container = styled.div`
-  margin-top: 1em;
-  padding: 1em 1em 1em 0;
   display: flex;
   gap: 0.4em;
+  margin-top: 1em;
+  padding: 1em 0;
   overflow-x: scroll;
 `;
 
@@ -27,6 +34,7 @@ const Button = styled.button`
   border-radius: 50%;
   flex-shrink: 0;
   cursor: pointer;
+  box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.101);
 `;
 
 export default ColorsList;
