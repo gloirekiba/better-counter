@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import ColorsList from "../ColorSelector";
 
-const EditCounter = ({ counter, editCounter, deleteCounter, setShowCounterEdit }) => {
+const EditCounter = ({ counter, editCounter, deleteCounter, setShowForm }) => {
   const [name, setName] = useState(counter.name);
   const [color, setColor] = useState(counter.color);
   const [canSave, setCanSave] = useState(true);
@@ -15,7 +15,7 @@ const EditCounter = ({ counter, editCounter, deleteCounter, setShowCounterEdit }
   }
 
   function onClose() {
-    setShowCounterEdit(false);
+    setShowForm(false);
     document.body.style.overflow = "auto";
   }
 
