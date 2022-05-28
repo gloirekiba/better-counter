@@ -65,7 +65,6 @@ const Button = styled.button`
   padding: 0.1em 0.6em;
   font-size: 5rem;
   font-weight: 400;
-  cursor: pointer;
 `;
 
 const Datas = styled.div`
