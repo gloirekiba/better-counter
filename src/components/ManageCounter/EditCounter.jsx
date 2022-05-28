@@ -10,7 +10,8 @@ const EditCounter = ({ counter, editCounter, deleteCounter, setShowCounterEdit }
 
   function onChange({ value }) {
     setName(value);
-    if (value.trim === "") setCanSave(false);
+    if (value.trim() === "") setCanSave(false);
+    else setCanSave(true);
   }
 
   function onClose() {
