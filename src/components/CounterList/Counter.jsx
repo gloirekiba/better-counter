@@ -80,6 +80,7 @@ const Datas = styled.div`
 const Name = styled.span`
   font-size: 1.6rem;
   font-weight: 500;
+  word-break: break-all;
 `;
 
 const Count = styled.span`
