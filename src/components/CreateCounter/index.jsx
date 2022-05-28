@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import Colors from "../ColorSelector";
+
 const CounterCreate = ({ addCounter }) => {
   const [name, setName] = useState("");
   const [color, setColor] = useState("white");
@@ -24,9 +26,7 @@ const CounterCreate = ({ addCounter }) => {
         placeholder="Counter name"
       />
       <div className="counter-create-colors">
-        <span className="counter-create-color"></span>
-        <span className="counter-create-color"></span>
-        <span className="counter-create-color"></span>
+        <Colors />
       </div>
       <div className="counter-create-buttons">
         <button className="counter-create-btn">Cancel</button>
