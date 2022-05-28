@@ -1,6 +1,7 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import styled from "styled-components";
 
-import CounterCreate from "./components/CreateCounter";
+import CreateCounter from "./components/CreateCounter";
 import AddCounter from "./components/AddCounter";
 import CounterList from "./components/Counter";
 
@@ -24,12 +25,18 @@ const App = () => {
   }
 
   return (
-    <div className="container">
-      <CounterCreate addCounter={addCounter} />
+    <Container>
+      <CreateCounter addCounter={addCounter} />
       <CounterList counters={counters} setCount={setCount} />
       <AddCounter />
-    </div>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+`;
 
 export default App;
