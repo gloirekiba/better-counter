@@ -10,15 +10,15 @@ const App = () => {
   const [display, setDisplay] = useState(false);
 
   function addCounter(name, color) {
-    setCounters([...counters, { id: uuidv4(), name, count: 0, color: color, lastUpdate: "never" }]);
+    setCounters([...counters, { id: uuidv4(), name, count: 0, color: color, lastUpdate: null }]);
   }
 
   function setCount(id, value) {
     const newCounters = [...counters];
     const counter = newCounters.find((counter) => counter.id === id);
     counter.count += value;
-    if (counter.count === 0) counter.lastUpdate = "never";
-    else counter.lastUpdate = new Date();
+    if (counter.count === 0) counter.lastUpdate = null;
+    else counter.lastUpdate = new Date().toISOString();
     setCounters(newCounters);
   }
 
