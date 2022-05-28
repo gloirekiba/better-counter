@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { formatDistance, isValid } from "date-fns";
+import { formatDistance } from "date-fns";
 
 const COUNTER_INCREASE = 1;
 const COUNTER_DECREASE = COUNTER_INCREASE * -1;
@@ -24,9 +24,9 @@ const Counter = ({ counter, setCount }) => {
           <Span role="img" aria-label="clock">
             &#128336;
           </Span>{" "}
-          {isValid(counter.lastUpdate)
-            ? formatDistance(counter.lastUpdate, new Date(), { addSuffix: true })
-            : counter.lastUpdate}
+          {counter.lastUpdate
+            ? formatDistance(new Date(counter.lastUpdate), new Date(), { addSuffix: true })
+            : "never"}
         </LastUpdate>
       </Datas>
       <Button onClick={() => handleCount(COUNTER_INCREASE)}>&#43;</Button>
