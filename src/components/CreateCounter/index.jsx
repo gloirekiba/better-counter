@@ -41,7 +41,9 @@ const CreateCounter = ({ addCounter, setDisplay }) => {
           />
           <ColorsList setColor={setColor} />
           <ButtonGroup>
-            <Button onClick={() => handleDisplay(false)}>Close</Button>
+            <Button type="button" onClick={() => handleDisplay(false)}>
+              Close
+            </Button>
             <Button type="submit">Create</Button>
           </ButtonGroup>
         </Form>
