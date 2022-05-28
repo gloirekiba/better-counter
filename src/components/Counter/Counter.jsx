@@ -12,16 +12,16 @@ const Counter = ({ counter, setCount }) => {
   }
 
   return (
-    <Container>
+    <Container style={{ backgroundColor: counter.color }}>
       <Button onClick={() => handleCount(COUNTER_DECREASE)} disabled={canDecrease}>
-        -
+        &#8722;
       </Button>
       <Datas>
         <Name>{counter.name}</Name>
         <Count>{counter.count}</Count>
         <LastUpdate>{counter.lastUpdate}</LastUpdate>
       </Datas>
-      <Button onClick={() => handleCount(COUNTER_INCREASE)}>+</Button>
+      <Button onClick={() => handleCount(COUNTER_INCREASE)}>&#43;</Button>
     </Container>
   );
 };
@@ -29,11 +29,9 @@ const Counter = ({ counter, setCount }) => {
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  background-color: #fff;
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.144);
   transform: translateX(-50%);
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.144);
   animation: anim 0.4s 0s forwards;
-
   @keyframes anim {
     to {
       transform: translateX(0);
