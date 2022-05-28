@@ -91,10 +91,10 @@ const ShowManager = styled.button`
   position: fixed;
   right: 5%;
   bottom: 10%;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   padding: 0.5em;
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: 700;
   background-color: #fff;
   border-radius: 50%;
