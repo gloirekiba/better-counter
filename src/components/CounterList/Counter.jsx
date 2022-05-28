@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { formatDistance } from "date-fns";
 
-import ManageCounter from "../ManageCounter";
+import CounterManager from "../CounterManager";
 
 const COUNTER_INCREASE = 1;
 const COUNTER_DECREASE = COUNTER_INCREASE * -1;
@@ -18,7 +18,7 @@ const Counter = ({ counter, updateCount, editCounter, deleteCounter }) => {
   return (
     <>
       {showForm && (
-        <ManageCounter
+        <CounterManager
           context="edit"
           counter={counter}
           editCounter={editCounter}
