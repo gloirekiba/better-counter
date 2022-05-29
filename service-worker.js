@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "https.gloirekiba.github.io/better-counter/precache-manifest.14acca5fb8c5c4b0fd0b8c1cf6c87051.js"
+  "/better-counter/precache-manifest.9556adf1812e075a5de76619d3ba8ebc.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("https.gloirekiba.github.io/better-counter/index.html", {
+workbox.routing.registerNavigationRoute("/better-counter/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
