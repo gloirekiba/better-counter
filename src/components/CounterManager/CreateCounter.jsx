@@ -6,9 +6,12 @@ import ColorSelector from "../ColorSelector";
 const CreateCounter = ({ addCounter, setShowForm }) => {
   const [name, setName] = useState("");
   const [color, setColor] = useState("white");
+  const [canSave, setCanSave] = useState(false);
 
-  function onChange({ target }) {
-    setName(target.value);
+  function onChange({ value }) {
+    setName(value);
+    if (value.trim() === "") setCanSave(false);
+    else setCanSave(true);
   }
 
   function onCreateCounter(e) {
@@ -33,7 +36,7 @@ const CreateCounter = ({ addCounter, setShowForm }) => {
         <Title>Add Counter</Title>
         <Form onSubmit={onCreateCounter}>
           <Input
-            onChange={onChange}
+            onChange={({ target }) => onChange(target)}
             value={name}
             type="text"
             placeholder="Counter name"
@@ -44,7 +47,9 @@ const CreateCounter = ({ addCounter, setShowForm }) => {
             <Button type="button" onClick={() => onClose(false)}>
               Close
             </Button>
-            <Button type="submit">Save</Button>
+            <Button disabled={!canSave} type="submit">
+              Save
+            </Button>
           </ButtonGroup>
         </Form>
       </Container>
