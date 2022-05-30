@@ -77,12 +77,9 @@ const Overlay = styled.div`
 `;
 
 const Container = styled.div`
-  position: fixed;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -20%);
   width: 95%;
   max-width: 600px;
+  margin: 50px auto 0;
   padding: 2em;
   border-radius: 5px;
   background-color: #fff;
