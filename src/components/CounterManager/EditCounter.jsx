@@ -43,7 +43,7 @@ const EditCounter = ({ counter, editCounter, deleteCounter, setShowForm }) => {
   return (
     <Overlay>
       <Container>
-        <Title>Edit Counter</Title>
+        <Title>Edit counter</Title>
         <Form onSubmit={onSave}>
           <Input
             onChange={({ target }) => onChange(target)}
@@ -105,7 +105,10 @@ const Container = styled.div`
 const Title = styled.h3`
   font-size: 2.5rem;
   margin-bottom: 1em;
-  text-transform: capitalize;
+  text-transform: lowercase;
+  ::first-letter {
+    text-transform: uppercase;
+  }
 `;
 
 const Form = styled.form``;
