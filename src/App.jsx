@@ -89,7 +89,7 @@ const Strong = styled.strong`
 const ShowManager = styled.button`
   position: fixed;
   right: 5%;
-  bottom: 10%;
+  bottom: 5%;
   width: 60px;
   height: 60px;
   padding: 0.5em;
