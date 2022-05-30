@@ -1,11 +1,11 @@
 {
-  "main.js": "/better-counter/static/js/main.64e7859c.chunk.js",
-  "main.js.map": "/better-counter/static/js/main.64e7859c.chunk.js.map",
+  "main.js": "/better-counter/static/js/main.da28c4b0.chunk.js",
+  "main.js.map": "/better-counter/static/js/main.da28c4b0.chunk.js.map",
   "runtime~main.js": "/better-counter/static/js/runtime~main.0635d56c.js",
   "runtime~main.js.map": "/better-counter/static/js/runtime~main.0635d56c.js.map",
   "static/js/2.26dec8a7.chunk.js": "/better-counter/static/js/2.26dec8a7.chunk.js",
   "static/js/2.26dec8a7.chunk.js.map": "/better-counter/static/js/2.26dec8a7.chunk.js.map",
   "index.html": "/better-counter/index.html",
-  "precache-manifest.9556adf1812e075a5de76619d3ba8ebc.js": "/better-counter/precache-manifest.9556adf1812e075a5de76619d3ba8ebc.js",
+  "precache-manifest.77a91c65d42acff9a6a657d99a86cd33.js": "/better-counter/precache-manifest.77a91c65d42acff9a6a657d99a86cd33.js",
   "service-worker.js": "/better-counter/service-worker.js"
 }

@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "0a80f4b9cf6a65421cbb",
-    "url": "/better-counter/static/js/main.64e7859c.chunk.js"
+    "revision": "4af601f6604507086064",
+    "url": "/better-counter/static/js/main.da28c4b0.chunk.js"
   },
   {
     "revision": "d5743db0f921fb5455e4",
@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "/better-counter/static/js/2.26dec8a7.chunk.js"
   },
   {
-    "revision": "bc864a62a937e696916d9588e211f222",
+    "revision": "dceed4beca38b881b4644356b5569e26",
     "url": "/better-counter/index.html"
   }
 ];
