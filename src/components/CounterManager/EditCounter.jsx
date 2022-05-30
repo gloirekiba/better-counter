@@ -91,7 +91,7 @@ const Overlay = styled.div`
 
 const Container = styled.div`
   width: 95%;
-  max-width: 600px;
+  max-width: 500px;
   margin: 50px auto 0;
   padding: 2em;
   border-radius: 5px;
