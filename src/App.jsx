@@ -55,7 +55,7 @@ const App = () => {
       <Container>
         {counters.length === 0 ? (
           <NoCounterFound>
-            No counter found, click the <Strong>(&#43;)</Strong> button bellow to add
+            <Smiley>🙅‍♂️</Smiley> No counter found
           </NoCounterFound>
         ) : (
           <CounterList
@@ -71,6 +71,10 @@ const App = () => {
   );
 };
 
+const Smiley = styled.div`
+  font-size: 30vh;
+`;
+
 const Container = styled.div`
   width: 95%;
   max-width: 600px;
@@ -79,13 +83,10 @@ const Container = styled.div`
 
 const NoCounterFound = styled.h3`
   font-size: 4em;
-  font-weight: 400;
+  font-weight: 500;
+  text-transform: uppercase;
   text-align: center;
   color: ${({ theme }) => theme.colors.primary};
-`;
-
-const Strong = styled.strong`
-  font-weight: 700;
 `;
 
 const ShowManager = styled.button`
@@ -97,8 +98,8 @@ const ShowManager = styled.button`
   padding: 0.5em;
   font-size: 2.3rem;
   font-weight: 700;
-  background-color: #d0d0d0;
   border-radius: 50%;
+  background-color: ${({ theme }) => theme.colors.secondary};
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.144);
 `;
 
