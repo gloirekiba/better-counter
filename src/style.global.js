@@ -4,9 +4,9 @@ const GlobalStyle = createGlobalStyle`
   *,
   ::before,
   ::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
   :root {
@@ -14,17 +14,17 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-  padding: 1em 0;
-  color: #333;
-  font-family: "Poppins", sans-serif;
-  background-color: #ecf0f3;
+    padding: 1em 0;
+    color: #333;
+    font-family: "Poppins", sans-serif;
+    background-color: #ecf0f3;
   }
 
   button {
-  display: inline-block;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
+    display: inline-block;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
   }
 
   button:disabled {
