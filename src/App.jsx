@@ -95,7 +95,7 @@ const ShowManager = styled.button`
   padding: 0.5em;
   font-size: 2.3rem;
   font-weight: 700;
-  background-color: #fff;
+  background-color: #d0d0d0;
   border-radius: 50%;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.144);
 `;
