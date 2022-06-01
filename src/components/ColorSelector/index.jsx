@@ -40,8 +40,9 @@ const Button = styled.button`
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  color: ${({ theme }) => theme.colors.secondary};
   flex-shrink: 0;
-  box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.101);
+  box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.3);
 `;
 
 const Span = styled.span``;
