@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import COLORS from "../../data/ColorList";
+import theme from "../../theme";
 
 const ColorsList = ({ setColor, defaultColor }) => {
   const [selected, setSelected] = useState(defaultColor);
@@ -13,13 +13,12 @@ const ColorsList = ({ setColor, defaultColor }) => {
 
   return (
     <Container>
-      {COLORS.map((color, index) => (
+      {theme.colors.extras.map((color, index) => (
         <Button
           onClick={({ target }) => onSelect(target)}
           key={index}
           type="button"
           style={{ backgroundColor: color }}
-          title={color}
           value={color}
         >
           {color === selected && <Span>&#10004;</Span>}
