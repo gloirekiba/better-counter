@@ -81,7 +81,7 @@ const Overlay = styled.div`
 const Container = styled.div`
   width: 95%;
   max-width: 500px;
-  margin: 50px auto 0;
+  margin: 100px auto 0;
   padding: 2em;
   border-radius: 5px;
   background-color: ${({ theme }) => theme.colors.primary};
