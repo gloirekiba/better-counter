@@ -73,7 +73,7 @@ const App = () => {
 
 const Container = styled.div`
   width: 95%;
-  max-width: 1200px;
+  max-width: 600px;
   margin: 0 auto;
 `;
 
