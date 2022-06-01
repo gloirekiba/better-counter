@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
+import theme from "../../theme";
+
 import ColorSelector from "../ColorSelector";
 
 const CreateCounter = ({ addCounter, setShowForm }) => {
   const [name, setName] = useState("");
-  const [color, setColor] = useState("white");
+  const [color, setColor] = useState(theme.colors.primary);
   const [canSave, setCanSave] = useState(false);
 
   function onChange({ value }) {
@@ -82,13 +84,14 @@ const Container = styled.div`
   margin: 50px auto 0;
   padding: 2em;
   border-radius: 5px;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.colors.primary};
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.144);
 `;
 
 const Title = styled.h3`
   font-size: 2.5rem;
   margin-bottom: 1em;
+  color: ${({ theme }) => theme.colors.secondary};
   text-transform: lowercase;
   ::first-letter {
     text-transform: uppercase;
@@ -102,7 +105,8 @@ const Input = styled.input`
   font-size: 2.3rem;
   border: none;
   padding: 0.3em 0;
-  border-bottom: 2px solid #4444446a;
+  color: ${({ theme }) => theme.colors.secondary};
+  border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
   outline: none;
   background-color: transparent;
 `;
@@ -116,6 +120,7 @@ const ButtonGroup = styled.div`
 
 const Button = styled.button`
   font-size: 1.6rem;
+  color: ${({ theme }) => theme.colors.secondary};
   font-weight: 700;
   text-transform: uppercase;
 `;
