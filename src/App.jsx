@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
+import GlobalTheme from "./components/GlobalTheme/GlobalTheme";
 
 import CounterManager from "./components/CounterManager";
 import CounterList from "./components/CounterList";
@@ -47,7 +48,7 @@ const App = () => {
   }, [counters]);
 
   return (
-    <>
+    <GlobalTheme>
       {showForm && (
         <CounterManager context="create" addCounter={addCounter} setShowForm={setShowForm} />
       )}
@@ -66,7 +67,7 @@ const App = () => {
         )}
         {!showForm && <ShowManager onClick={() => setShowForm(true)}>&#43;</ShowManager>}
       </Container>
-    </>
+    </GlobalTheme>
   );
 };
 
@@ -80,6 +81,7 @@ const NoCounterFound = styled.h3`
   font-size: 4em;
   font-weight: 400;
   text-align: center;
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 const Strong = styled.strong`
