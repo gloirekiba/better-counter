@@ -80,7 +80,7 @@ const Overlay = styled.div`
 
 const Container = styled.div`
   width: 95%;
-  max-width: 500px;
+  max-width: 400px;
   margin: 100px auto 0;
   padding: 2em;
   border-radius: 5px;
@@ -114,7 +114,7 @@ const Input = styled.input`
 const ButtonGroup = styled.div`
   display: flex;
   justify-content: flex-end;
-  gap: 1em;
+  gap: 3em;
   margin-top: 50px;
 `;
 
