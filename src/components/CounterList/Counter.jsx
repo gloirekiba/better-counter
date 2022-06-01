@@ -34,7 +34,7 @@ const Counter = ({ counter, updateCount, editCounter, deleteCounter }) => {
           <Name>{counter.name}</Name>
           <Count>{counter.count}</Count>
           <LastUpdate>
-            <Span role="img" aria-label="clock">
+            <Span role="img" aria-label="jsx-a11y/accessible-emoji">
               &#128336;
             </Span>{" "}
             {counter.lastUpdate
@@ -51,12 +51,13 @@ const Counter = ({ counter, updateCount, editCounter, deleteCounter }) => {
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  transform: translateX(-50%);
+  transform: translateY(-50%);
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.144);
   animation: anim 0.4s 0s forwards;
+  transition: all 0.5s;
   @keyframes anim {
     to {
-      transform: translateX(0);
+      transform: translateY(0);
     }
   }
 `;
