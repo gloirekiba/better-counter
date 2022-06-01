@@ -91,17 +91,18 @@ const Overlay = styled.div`
 
 const Container = styled.div`
   width: 95%;
-  max-width: 500px;
-  margin: 50px auto 0;
+  max-width: 400px;
+  margin: 100px auto 0;
   padding: 2em;
   border-radius: 5px;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.colors.primary};
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.144);
 `;
 
 const Title = styled.h3`
   font-size: 2.5rem;
   margin-bottom: 1em;
+  color: ${({ theme }) => theme.colors.secondary};
   text-transform: lowercase;
   ::first-letter {
     text-transform: uppercase;
@@ -115,7 +116,8 @@ const Input = styled.input`
   font-size: 2.3rem;
   border: none;
   padding: 0.3em 0;
-  border-bottom: 2px solid #4444446a;
+  color: ${({ theme }) => theme.colors.secondary};
+  border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
   outline: none;
   background-color: transparent;
 `;
@@ -123,15 +125,15 @@ const Input = styled.input`
 const ButtonGroup = styled.div`
   display: flex;
   justify-content: flex-end;
-  gap: 1em;
+  gap: 3em;
   margin-top: 50px;
 `;
 
 const Button = styled.button`
   font-size: 1.6rem;
+  color: ${({ theme }) => theme.colors.secondary};
   font-weight: 700;
   text-transform: uppercase;
-
   :first-child {
     margin-right: auto;
     color: tomato;
