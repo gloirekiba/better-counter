@@ -29,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
 
   button:disabled {
     cursor: not-allowed ;
+    color: gray;
   }
 `;
 
