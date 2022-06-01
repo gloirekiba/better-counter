@@ -64,12 +64,15 @@ const Container = styled.div`
 const Button = styled.button`
   padding: 0.1em 0.6em;
   font-size: 5rem;
+  color: ${({ theme }) => theme.colors.secondary};
   font-weight: 400;
 `;
 
 const Datas = styled.div`
   flex-grow: 1;
   display: flex;
+  color: ${({ theme }) => theme.colors.secondary};
+
   flex-direction: column;
   justify-content: center;
   padding: 1em;
