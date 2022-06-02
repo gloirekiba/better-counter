@@ -4,7 +4,9 @@ A multi-purpose counter app
 
 * Track good and bad habits (eg: exercising, smoking, drinking...)
 * Track when's the last time you did something (eg: water your plants, change your bedsheets, poop...)
-* Count your lives in Mtg
+* Count your lives in Mtg 
+
+Inspired by ***[BetterCounter](https://f-droid.org/en/packages/org.kde.bettercounter/)***
 
 ## Technologies used
 
